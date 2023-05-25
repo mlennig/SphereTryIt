@@ -20,6 +20,11 @@ public class SphereMaker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetMouseButtonDown(1))
+        {
+            var duplicateSphere = GameObject.Instantiate(sphere);
+            duplicateSphere.transform.position = new Vector3(Random.Range(-4,4), Random.Range(-4, 4), 0);
+            Camera.main.transform.LookAt(duplicateSphere.transform);
+        }
     }
 }
